@@ -10,16 +10,16 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * Servlet implementation class Controller
+ * Servlet implementation class FormController
  */
-@WebServlet("/Controller")
-public class Controller extends HttpServlet {
+@WebServlet("/FormController")
+public class FormController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public Controller() {
+    public FormController() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -28,33 +28,24 @@ public class Controller extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String action = request.getParameter("action");
-		String page = null;
+		String user = request.getParameter("person");
 		
-		if(action == null){
-			page = "/error.jsp";
-		} else if(action.equals("about")){
-			page = "/about.jsp";
-		} else if(action.equals("login")){
-			page = "/login.jsp";
-		} else if(action.equals("contact")){
-			page = "/contact.jsp";
-		} else {
-			page = "/error.jsp";
-		}
+		PrintWriter out = response.getWriter();
 		
-		getServletContext().getRequestDispatcher(page).forward(request, response);
+		out.println("<html>");
+		out.println("User name: " + user);
+		out.println("</html>");
+		out.println("<p/>");
+		
+		response.getWriter().append("Served at: ").append(request.getContextPath());
 	}
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String animal = request.getParameter("animal");
-		PrintWriter out = response.getWriter();
-		out.println("<html>");
-		out.println("<p><b>Entered animal is: " + animal + "</b></p>");
-		out.println("</html>");
+		// TODO Auto-generated method stub
+		doGet(request, response);
 	}
 
 }
