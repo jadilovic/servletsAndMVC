@@ -50,10 +50,12 @@ public class Controller extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String animal = request.getParameter("animal");
+		String email = request.getParameter("email");
+		String password = request.getParameter("password");
 		PrintWriter out = response.getWriter();
 		out.println("<html>");
-		out.println("<p><b>Entered animal is: " + animal + "</b></p>");
+		out.println("<p><b>Entered email is: " + email + "</b></p>");
+		out.println("<p><b>Entered email is: " + password + "</b></p>");
 		out.println("</html>");
 	}
 
