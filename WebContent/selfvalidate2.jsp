@@ -12,8 +12,7 @@
 <jsp:setProperty property="*" name="user10"/>
 
 <%
-
-if(!user10.getEmail().equals("")){
+if(user10.getEmail() != ""){
 	if(user10.validate()){
 		request.getRequestDispatcher("/Controller").forward(request, response);
 	}
@@ -21,7 +20,6 @@ if(!user10.getEmail().equals("")){
 %>
 
 <form action="/MVC/selfvalidate2.jsp" method="post">
-<input type="hidden" name="action" value="formsubmit" />
 <input type="text" name="email" value="<jsp:getProperty property="email" name="user10"/>" />
 <input type="text" name="password" value="<jsp:getProperty property="password" name="user10"/>" />
 <input type="submit" value="OK" />
