@@ -16,7 +16,6 @@ String action = request.getParameter("action");
 if(action != null && action.equals("formsubmit")){
 	if(user1.validate()){
 		request.getRequestDispatcher("/Controller").forward(request, response);
-		// response.sendRedirect("/Controller");
 		}
 }
 %>
