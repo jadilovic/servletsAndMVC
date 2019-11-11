@@ -4,15 +4,16 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
+<title>Form to be filled</title>
 </head>
 <body>
 
 <form action="/MVC/LoginController" method="post">
 <input type="hidden" name="action" value="filledForm" />
-<input type="text" name="email" value="" />
-<input type="text" name="password" value="" />
+<input type="text" name="email" value="<%= request.getAttribute("email") %>" />
+<input type="text" name="password" value="<%= request.getAttribute("password") %>" />
 <input type="submit" value="OK">
 </form>
+<p>The message</p>  <%= request.getAttribute("message") %>
 </body>
 </html>

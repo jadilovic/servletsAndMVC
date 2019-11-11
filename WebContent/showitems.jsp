@@ -4,9 +4,21 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Home Page</title>
+<title>Insert title here</title>
 </head>
 <body>
-<a href="/MVC/LoginController">Go to Login page</a>
+
+<%@ page import="demo.*" %>
+
+<% Cart cart = (Cart) session.getAttribute("cart");
+
+if(cart == null){ %>
+	<b>No items in the cart</b>
+<%
+} else{ %>
+Items in the cart: <%= cart.getTotalItems() %>
+
+<% } %>
+
 </body>
 </html>

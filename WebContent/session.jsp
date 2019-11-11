@@ -4,9 +4,11 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Home Page</title>
+<title>Insert title here</title>
 </head>
 <body>
-<a href="/MVC/LoginController">Go to Login page</a>
+
+<%= session.getMaxInactiveInterval() %>
+
 </body>
 </html>

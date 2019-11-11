@@ -56,6 +56,8 @@ public class LoginController extends HttpServlet {
 			if(user.validate()){
 				request.getRequestDispatcher("/success.jsp").forward(request, response);
 			} else {
+				String message = user.getMessage();
+				request.setAttribute("message", message);
 				request.getRequestDispatcher("/form.jsp").forward(request, response);
 			}
 		}
