@@ -18,6 +18,6 @@ Items in the cart: <%= cart.getTotalItems() %>
 
 <% } %>
 
-<a href="/MVC/showPage2.jsp">Click on this link</a>
+<a href="<%= response.encodeURL(request.getContextPath()) + "/showPage2.jsp" %>">Click on this link for the next page</a>
 </body>
 </html>
